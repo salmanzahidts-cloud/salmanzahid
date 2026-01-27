@@ -46,16 +46,18 @@ document.addEventListener("DOMContentLoaded", () => {
 /***********************
  HEADER SCROLL EFFECT
 ************************/
-window.addEventListener("scroll", () => {
-  document
-    .querySelector("header")
-    ?.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-/***********************
- MOBILE MENU
-************************/
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* HERO LOAD */
+  document.querySelector(".hero")?.classList.add("hero-loaded");
+
+  /* HEADER SCROLL */
+  window.addEventListener("scroll", () => {
+    document.querySelector("header")
+      ?.classList.toggle("scrolled", window.scrollY > 50);
+  });
+
+  /* MOBILE MENU */
   const menuToggle = document.getElementById("menuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
   const closeMenu = document.getElementById("closeMenu");
@@ -64,13 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.onclick = () => mobileMenu.classList.add("active");
     closeMenu.onclick = () => mobileMenu.classList.remove("active");
   }
-});
 
-/***********************
- HERO LOAD ANIMATION
-************************/
-window.addEventListener("load", () => {
-  document.querySelector(".hero")?.classList.add("hero-loaded");
 });
 
 /***********************
